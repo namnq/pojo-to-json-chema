@@ -12,7 +12,7 @@
   <dependency>
 	    <groupId>com.github.namnq</groupId>
 	    <artifactId>pojo-to-json-chema</artifactId>
-	    <version>master-SNAPSHOT</version>
+	    <version>1.0</version>
 	</dependency>
 <dependency>
 			<groupId>com.fasterxml.jackson.module</groupId>
