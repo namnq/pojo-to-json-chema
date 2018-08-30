@@ -22,7 +22,7 @@ public class JSONSchema {
     }
 
     public static void genJsonSchema() throws Exception {
-        Reflections reflections = new Reflections("com.ascendmoney.ami");
+        Reflections reflections = new Reflections("com.ascendmoney");
         Set<Class<?>> annotatedClasses = reflections.getTypesAnnotatedWith(ToJsonSchema.class);
         for (Class cl : annotatedClasses) {
             ToJsonSchema schema = (ToJsonSchema) cl.getDeclaredAnnotation(ToJsonSchema.class);
