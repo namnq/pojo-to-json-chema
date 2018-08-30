@@ -13,9 +13,6 @@ import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchemaGenerator;
 
 public class JSONSchema {
-    public static void main(String[] args) throws Exception {
-        genJsonSchema();
-    }
 
     private static String getJsonSchema(Class cl) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
