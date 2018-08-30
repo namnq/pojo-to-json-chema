@@ -13,6 +13,9 @@ import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchemaGenerator;
 
 public class JSONSchema {
+    public static void main(String[] args) throws Exception {
+        genJsonSchema();
+    }
 
     private static String getJsonSchema(Class cl) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
@@ -21,8 +24,8 @@ public class JSONSchema {
         return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(schema);
     }
 
-    public static void genJsonSchema() throws Exception {
-        Reflections reflections = new Reflections("com.ascendmoney");
+    public static void genJsonSchema(String packageName) throws Exception {
+        Reflections reflections = new Reflections(packageName);
         Set<Class<?>> annotatedClasses = reflections.getTypesAnnotatedWith(ToJsonSchema.class);
         for (Class cl : annotatedClasses) {
             ToJsonSchema schema = (ToJsonSchema) cl.getDeclaredAnnotation(ToJsonSchema.class);
@@ -33,10 +36,17 @@ public class JSONSchema {
         }
     }
 
-    public static void writeFile(String directoryName, String fileName, String value) {
+    public static void genJsonSchema() throws Exception {
+        genJsonSchema("com.ascendmoney");
+    }
+
+    private static void writeFile(String directoryName, String fileName, String value) {
         File directory = new File(directoryName);
         if (!directory.exists()) {
             directory.mkdir();
+        }
+        if (directoryName.endsWith("/")) {
+            directoryName = directoryName.substring(0, directoryName.length() - 1);
         }
         File file = new File(directoryName + "/" + fileName);
         try {
