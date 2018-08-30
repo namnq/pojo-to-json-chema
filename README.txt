@@ -2,6 +2,8 @@
   param có thể sử dụng: @ToJsonSchema(path="/tmp/data") default là folder /tmp/ascend/
   sử dụng code JSONSchema.genJsonSchema() hoặc JSONSchema.genJsonSchema("package to scan đối với package không bắt đầu bằng com.ascendmoney") (import com.ascendmoney.ami.scanner.JSONSchema;) để gen jsonSchema
   
+  Maven repository:
+  
   <repositories>
 		<repository>
 		    <id>jitpack.io</id>
