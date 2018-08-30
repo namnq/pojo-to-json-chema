@@ -5,20 +5,20 @@
   Maven repository:
   
   <repositories>
-		<repository>
-		    <id>jitpack.io</id>
-		    <url>https://jitpack.io</url>
-		</repository>
-	</repositories>
+	<repository>
+	    	<id>jitpack.io</id>
+		<url>https://jitpack.io</url>
+	</repository>
+</repositories>
   
-  <dependency>
+<dependency>
 	    <groupId>com.github.namnq</groupId>
 	    <artifactId>pojo-to-json-chema</artifactId>
 	    <version>1.1</version>
-	</dependency>
+</dependency>
 <dependency>
-			<groupId>com.fasterxml.jackson.module</groupId>
-			<artifactId>jackson-module-jsonSchema</artifactId>
-			<version>2.9.6</version>
-		</dependency>
+	<groupId>com.fasterxml.jackson.module</groupId>
+	<artifactId>jackson-module-jsonSchema</artifactId>
+	<version>2.9.6</version>
+</dependency>
   
